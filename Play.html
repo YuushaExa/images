@@ -1,9 +1,6 @@
 <html lang=en-us>
     <body style="margin:0px 0px 0px 0px"> 
                           <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/></script>
- <form name="form1" action="end.php">
-     <input type="hidden" id="hiddenid" name="hiddenname" value="" /></input>          
-        </form>
  <div style='width:640px;height:480px;max-width:100%'>
     <div id='game'></div>
 </div>
@@ -18,7 +15,7 @@
             EJS_gameUrl = "Link";
             EJS_oldCores = false;   
                           },
-     2000);
+     1000);
              </script>
     <script>
     setTimeout(function(){
@@ -43,20 +40,6 @@ var foo = getParameterByName('link')
 document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
 document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
-                   
-                   window.onload = function () {
-</script>
-
-               <script type="text/javascript">
-  // get the search params from the window's URL
-  const urlParams = new URLSearchParams(window.location.search);
-
-  // get the value of 'hiddenname'
-  const myParam = urlParams.get('hiddenname');
-
-  // store this value in the input with id="hiddenid"
-  document.getElementById('hiddenid').value = myParam;
-};
-        </script>
+    </script>
     </body>
 </html>
