@@ -1,10 +1,5 @@
 <html lang=en-us>
-    <body style="margin:0px 0px 0px 0px"> 
-                          <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/></script>
- <div style='width:640px;height:480px;max-width:100%'>
-    <div id='game'></div>
-</div>
-            
+     <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/></script>
                <script type="text/javascript">
         function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -16,17 +11,25 @@
 }
 
 var foo = getParameterByName('link')
+document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
+document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);
  
-            EJS_BETA = false;
+            EJS_BETA = "false";
             EJS_player = "#game";
-            EJS_core = "snes";
-            EJS_gameName = (foo);
+            EJS_core = "Core";
+            EJS_gameName = "Name";
             EJS_startOnLoaded = false;
             EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
-            EJS_gameUrl = "link";
+            EJS_gameUrl = "Link";
             EJS_oldCores = false;      
     </script>
+    <body style="margin:0px 0px 0px 0px"> 
+                         
+ <div style='width:640px;height:480px;max-width:100%'>
+    <div id='game'></div>
+</div>
+            
       <script>
     setTimeout(function(){
         var script = document.createElement('script');
