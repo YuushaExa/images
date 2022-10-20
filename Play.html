@@ -3,14 +3,29 @@
         <div style="width:100%;height:100%;">
             <div id="game"></div>
         </div>
+                          <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/>
+                <script>
+        function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var foo = getParameterByName('link')
+    document.getElementById("link").innerHTML = foo;
+var foo1 = getParameterByName('platform')
+    document.getElementById("platform").innerHTML = foo1;
+         </script>
         <script>
-            EJS_BETA = "None";
             EJS_player = "#game";
-            EJS_core = "None";
+            EJS_core = "<div id="platform"></div>";
             EJS_gameName = "None";
             EJS_startOnLoaded = false;
             EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
-            EJS_gameUrl = "None";
+            EJS_gameUrl = "<div id="link"></div>";
             EJS_oldCores = false;
         </script>
         <script src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script>
