@@ -3,10 +3,13 @@
   <div style="width:100%;height:100%;">
             <div id="game"></div>
         </div>
+        <form>
+  <input type="button" value="Press to Play!">
+</form>
              <script>
             EJS_BETA = false;
             EJS_player = "#game";
-            EJS_core = "snes";
+            EJS_core = "Core";
             EJS_gameName = "100 Man Dollar Kid - Maboroshi no Teiou Hen";
             EJS_startOnLoaded = false;
             EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
@@ -29,7 +32,8 @@ document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
 document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
         </script>
-                   
-        <script src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script>
+                   $("button").click(function(){
+  $.getScript("https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js");
+}); 
     </body>
 </html>
