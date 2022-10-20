@@ -15,6 +15,14 @@
             EJS_gameUrl = "Link";
             EJS_oldCores = false;   
              </script>
+    <script>
+    setTimeout(function(){
+        var script = document.createElement('script');
+        script.src = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
+     },
+     4000);
+</script>
 
                <script type="text/javascript">
         function getParameterByName(name, url = window.location.href) {
@@ -31,14 +39,5 @@ document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
 document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
         </script>
-      
-<script>
-    setTimeout(function(){
-        var script = document.createElement('script');
-        script.src = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-     },
-     4000);
-</script>
     </body>
 </html>
