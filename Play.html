@@ -1,6 +1,20 @@
-<html lang=en-us>
-     <head>
-     <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/></script>
+<html lang=en-us> <head>
+                    <script type="text/javascript">
+          EJS_BETA = "false";
+            EJS_player = "#game";
+            EJS_core = "Core";
+            EJS_gameName = "Name";
+            EJS_startOnLoaded = false;
+            EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
+            EJS_gameUrl = "Link";
+            EJS_oldCores = false;      
+    </script>
+    
+  
+     </head>
+ 
+    <body style="margin:0px 0px 0px 0px"> 
+                            <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/></script>
                <script type="text/javascript">
         function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -25,9 +39,6 @@ document.head.innerHTML = document.head.innerHTML.replace('Core',foo1);
             EJS_gameUrl = "Link";
             EJS_oldCores = false;      
     </script>
-     </head>
-    <body style="margin:0px 0px 0px 0px"> 
-                         
  <div style='width:640px;height:480px;max-width:100%'>
     <div id='game'></div>
 </div>
