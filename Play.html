@@ -5,11 +5,11 @@
         </div>
         
             EJS_player = "#game";
-            EJS_core = "Link";
+            EJS_core = Core;
             EJS_gameName = "None";
             EJS_startOnLoaded = false;
             EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
-            EJS_gameUrl = Core;
+            EJS_gameUrl = Link;
             EJS_oldCores = false;        
      
                <script type="text/javascript">
@@ -25,15 +25,7 @@
 var foo = getParameterByName('link')
 document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
-document.body.innerHTML = document.body.innerHTML.replace('Core',foo1); 
-    
-                EJS_player = "#game";
-            EJS_core = "Link ";
-            EJS_gameName = "None";
-            EJS_startOnLoaded = false;
-            EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
-            EJS_gameUrl = Core;
-            EJS_oldCores = false;
+document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
         </script>
                    
         <script src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script>
