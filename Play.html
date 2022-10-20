@@ -2,14 +2,13 @@
     <body style="margin:0px 0px 0px 0px"> 
                           <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/></script>
  <form name="form1" action="end.php">
-            <input type="hidden" id="hiddenid" name="hiddenname" value="" />
-              <input type="submit" id="send" onclick="call()"/>
-            
+     <input type="hidden" id="hiddenid" name="hiddenname" value="" /></input>          
         </form>
  <div style='width:640px;height:480px;max-width:100%'>
     <div id='game'></div>
 </div>
              <script>
+                     setTimeout(function(){
             EJS_BETA = false;
             EJS_player = "#game";
             EJS_core = "Core";
@@ -18,6 +17,8 @@
             EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
             EJS_gameUrl = "Link";
             EJS_oldCores = false;   
+                          },
+     2000);
              </script>
     <script>
     setTimeout(function(){
