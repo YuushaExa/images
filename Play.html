@@ -5,7 +5,6 @@
  <div style='width:640px;height:480px;max-width:100%'>
     <div id='game'></div>
 </div>
-<input class='playgame' type='button' value='Play Game Online'/>
              <script>
             EJS_BETA = false;
             EJS_player = "#game";
@@ -32,11 +31,7 @@ document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
 document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
         </script>
-        <script>
-        $("button").click(function(){
-  $.getScript("https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js");
-}); 
-        </script>
+      
 <script>
     setTimeout(function(){
         var script = document.createElement('script');
