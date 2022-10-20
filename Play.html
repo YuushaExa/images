@@ -3,11 +3,7 @@
   <div style="width:100%;height:100%;">
             <div id="game"></div>
         </div>
-        <form>
-  <input type="button" value="Press to Play!">
-</form>
-        <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-
+                <button onclick='loadScript()'>Click</button>
              <script>
             EJS_BETA = false;
             EJS_player = "#game";
@@ -34,10 +30,10 @@ document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
 document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
         </script>
-                       <script type="text/javascript">
-                   $("button").click(function(){
-  $.getScript("https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js");
-}); 
-                            </script>
+        <script>
+            function loadScript()  {
+                document.getElementsByTagName('body')[0].innerHTML += "<script src='https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js'></script>";
+            }
+        </script>
     </body>
 </html>
