@@ -9,7 +9,7 @@
             EJS_gameUrl = "Link";
             EJS_oldCores = false;      
     </script>
-    
+    <div id="platform"></div>
   
      </head>
  
@@ -27,7 +27,8 @@
 var foo = getParameterByName('link')
 document.head.innerHTML = document.head.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
-document.head.innerHTML = document.head.innerHTML.replace('Core',foo1);        
+document.head.innerHTML = document.head.innerHTML.replace('Core',foo1);
+                 document.getElementById("platform").innerHTML = foo1;
     </script>
  <div style='width:640px;height:480px;max-width:100%'>
     <div id='game'></div>
