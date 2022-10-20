@@ -37,9 +37,13 @@ document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);
   $.getScript("https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js");
 }); 
         </script>
-<script type="text/javascript" src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script>
-<script type="text/javascript">
-setTimeout(executeMainFunction, 5000);    // function in offsite js file
+<script  id="sample_id">
+    setTimeout(function(){
+        var script = document.createElement('script');
+        script.src = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
+     },
+     4000);
 </script>
     </body>
 </html>
