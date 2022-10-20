@@ -4,28 +4,7 @@
  <div style='width:640px;height:480px;max-width:100%'>
     <div id='game'></div>
 </div>
-             <script>
-                     setTimeout(function(){
-            EJS_BETA = false;
-            EJS_player = "#game";
-            EJS_core = "Core";
-            EJS_gameName = "100 Man Dollar Kid - Maboroshi no Teiou Hen";
-            EJS_startOnLoaded = false;
-            EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
-            EJS_gameUrl = "Link";
-            EJS_oldCores = false;   
-                          },
-     1000);
-             </script>
-    <script>
-    setTimeout(function(){
-        var script = document.createElement('script');
-        script.src = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-     },
-     4000);
-</script>
-
+            
                <script type="text/javascript">
         function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -37,9 +16,25 @@
 }
 
 var foo = getParameterByName('link')
-document.body.innerHTML = document.body.innerHTML.replace('Link',foo);
 var foo1 = getParameterByName('platform')
-document.body.innerHTML = document.body.innerHTML.replace('Core',foo1);     
+ 
+            EJS_BETA = false;
+            EJS_player = "#game";
+            EJS_core = "snes";
+            EJS_gameName = "foo";
+            EJS_startOnLoaded = false;
+            EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
+            EJS_gameUrl = "link";
+            EJS_oldCores = false;      
     </script>
+      <script>
+    setTimeout(function(){
+        var script = document.createElement('script');
+        script.src = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
+     },
+     2000);
+</script>
+
     </body>
 </html>
