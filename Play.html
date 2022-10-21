@@ -194,88 +194,88 @@ position: absolute;    margin: auto;
   </div>  
     </div>
 
- <script type='text/javascript'>  
-  $.getJSON(&quot;https://yuushaexa.github.io/web/dev/snes/snes-rom2.json&quot;, function(json) {
+<script type='text/javascript'>  
+  $.getJSON("https://yuushaexa.github.io/web/dev/snes/snes-rom2.json", function(json) {
   
 json = json.filter(function(val) {
-  return (val.Name.includes(&quot;Operation Thunderbolt&quot;));
+  return (val.Name.includes("Operation Thunderbolt"));
 });  
   
-  var html = &quot;&quot;;  
+  var html = "";  
 json.forEach(function(val) {
   var keys = Object.keys(val);
-  html += &quot;<div class='cat'>&quot;;
+  html += "<div class='cat'>";
   keys.forEach(function(key) {
-     html += &quot;<p class='copy' tabindex='0'>&quot; + val[key] + &quot;</p>&quot;;
+     html += "<p class='copy' tabindex='0'>" + val[key] + "</p>";
   });
-    html += &quot;</div>&quot;;
+    html += "</div>";
 });
-    $(&quot;.information&quot;).html(html);  
+    $(".information").html(html);  
   }); 
 </script>     
              <script type='text/javascript'>  
 
-          $(document).on(&#39;click&#39;, &#39;.copy&#39;, function(e){
+          $(document).on('click', '.copy', function(e){
     e.preventDefault();
-    $(&#39;.paste&#39;).val($(this).text());
+    $('.paste').val($(this).text());
 });
   </script>     
     
        
           <script type='text/javascript'>
 $(function () {
-$(&#39;#btnStatus&#39;).click(function () {
+$('#btnStatus').click(function () {
 $.ajax({
-url: $(&#39;#romURL&#39;).val(),
-type:&#39;HEAD&#39;,
+url: $('#romURL').val(),
+type:'HEAD',
 success: function (data) {
-alert(&#39;exists&#39;);
+alert('exists');
 },
 error: function (data) {
-alert(&#39;does not exist&#39;);
+alert('does not exist');
 }
 });
 });
 })
 </script>
 <script>
-document.forms[&#39;myFormId&#39;].addEventListener(&#39;submit&#39;, async (event) =&gt; {
+document.forms['myFormId'].addEventListener('submit', async (event) =&gt; {
     event.preventDefault();
 
-    const formData = new FormData(document.forms[&#39;myFormId&#39;]);
-    var romURL = formData.get(&#39;romURL&#39;).trim();
-    const platform = formData.get(&#39;platform&#39;).trim();
+    const formData = new FormData(document.forms['myFormId']);
+    var romURL = formData.get('romURL').trim();
+    const platform = formData.get('platform').trim();
 
-    const romFile = formData.get(&#39;romFile&#39;);
+    const romFile = formData.get('romFile');
     console.log(romFile)
    
-    var fileType = &quot;&quot;;
-    if (platform == &quot;arcade&quot;)
+    var fileType = "";
+    if (platform == "arcade")
     {
-        fileType = &quot;application/zip&quot;;
+        fileType = "application/zip";
     }
    
     
     console.log(romURL);
     console.log(platform);
     console.log(fileType);
-    const display = document.createElement(&quot;div&quot;);
-    const game = document.createElement(&quot;div&quot;);
-    display.id = &quot;display&quot;;
-    game.id = &quot;game&quot;;
+    const display = document.createElement("div");
+    const game = document.createElement("div");
+    display.id = "display";
+    game.id = "game";
     display.appendChild(game);
-    document.getElementById(&quot;console&quot;).appendChild(display);
+    document.getElementById("console").appendChild(display);
 
-    window.EJS_player = &quot;#game&quot;;
-    window.EJS_gameName = &quot;Custom Game&quot;;
+    window.EJS_player = "#game";
+    window.EJS_gameName = "Custom Game";
     window.EJS_gameUrl = romURL;
     window.EJS_core = platform;
 
-    const script = document.createElement(&quot;script&quot;)
-    script.id = &quot;emulatorjs&quot;;
-    script.src = &quot;https://yuushaexa.github.io/core-old/data/loader.js&quot;;
+    const script = document.createElement("script")
+    script.id = "emulatorjs";
+    script.src = "https://yuushaexa.github.io/core-old/data/loader.js";
     document.body.appendChild(script);
-    document.getElementById(&quot;gameInputs&quot;).remove();
+    document.getElementById("gameInputs").remove();
 
 });
 </script>
