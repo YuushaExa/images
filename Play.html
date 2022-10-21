@@ -1,38 +1,285 @@
-<html lang=en-us>                   <script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<head>
-                    <script type="text/javascript">
-          EJS_BETA = "false";
-            EJS_player = "#game";
-            EJS_core = "Core";
-            EJS_gameName = "Name";
-            EJS_startOnLoaded = false;
-            EJS_pathtodata = "https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/";
-            EJS_gameUrl = "Link";
-            EJS_oldCores = false;      
-    </script>
- 
-     </head>
- 
-    <body style="margin:0px 0px 0px 0px"> 
-               <script type="text/javascript">
-        function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+<html lang=en-us>                  
+<head> </head>
+  <style type='text/css'>
+    .information {
+    overflow: hidden;
+    height: auto;
+    color: white;
+    width: inherit;
+    position: relative;
+    background-image: linear-gradient(#0D2289, #06093B);
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 2px 2px rgb(0 0 0 / 30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0rem 1rem 1rem 1rem;
+    margin: 0;
+    line-height: 80%;
+    text-shadow: 2px 2px black;
+  } .cat {line-break: anywhere;    padding: 5px;z-index: 1000;}
+  
+  
+  .description {
+    overflow: hidden;
+    height: auto;
+    margin: 0 0 8px;
+    padding: 8px 15px;
+   border-radius: 15px;
+    background-color: #000000ad;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 50%);
+    color: #eff1f4;
 }
-
-var foo = getParameterByName('link')
-document.head.innerHTML = document.head.innerHTML.replace('Link',foo);
-var foo1 = getParameterByName('platform')
-document.head.innerHTML = document.head.innerHTML.replace('Core',foo1);
-    </script>
- <div style='width:640px;height:480px;max-width:100%'>
-    <div id='game'></div>
+  #roms {
+    padding: 5px 0 0 5px;
+  background-color: #202029;
+    border-top-left-radius: 5px;
+    box-shadow: rgb(0 0 0 / 15%) 0 5px 5px;
+    color: white;
+    border-top-right-radius: 5px;
+  }
+  
+   #GameW {   overflow: hidden;
+    margin: auto;
+    color: #fff;
+   
+  text-align: -webkit-center;
+  position: relative;
+      width: 85%;
+    top: 21px;
+  left: 0;
+    right: 0;
+  }
+  form#myFormId {
+  
+    padding: 8px 15px;
+    width: 500px;
+  }
+  
+  .cat p:nth-of-type(2) {
+  border: 1px solid rgb(0 0 0 / 64%);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px rgb(0 0 0 / 30%), 0 1px 0 rgb(255 255 255 / 10%), 0 -1px 0 rgb(0 0 0 / 50%);
+    background-image: linear-gradient(#6779cf, #22116a);
+    font-size: 15px;
+}
+  
+  #roms2 {
+  overflow: hidden;
+    height: auto;
+    margin: 0 0 8px;
+    background-color: #202029;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: rgb(0 0 0 / 15%) 0 5px 5px;
+    color: white;
+    padding: 0 0 5px 5px;
+  }
+  
+  .cat p:nth-of-type(2):active, .cat p:nth-of-type(2):focus {
+   background-image: linear-gradient(#6179FF, #2440df);
+}
+.cat p:nth-of-type(1) {
+  pointer-events: none;
+      padding-bottom: 10px;
+  }
+  
+  .back {
+      background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzlbADB6ZeYlg5NSsr71urDbcDoedivBE9Twj51wgNsamvGfksyRdNHXHgG49zJTQxhxgigL-A_kBUtf7urwrB-q6fORrHrpk6sEjlCunOitBhDR4C2tc5o-vThIBIjvUXOhYX7hTuis2JIqfAO5B7PuzMwsRgxrO5Bg88UxkVwUiI5m8gW-YIMiW-_w/s900/nintendosnes%20%281%29.png);
+   z-index: 25;
+      width: 901px;
+    height: 673px;
+position: absolute;    margin: auto;
+    left: 0;
+    right: 0;
+  border-radius: 5px;
+    box-shadow: rgb(13 132 255 / 80%) 0 5px 5px;
+  }
+  
+  
+ #GameW {
+    overflow: hidden;
+    margin: auto;
+    color: #fff;
+    text-align: -webkit-center;
+    position: relative;
+    height: 630px;
+    width: 85%;
+    top: 21px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    font: 1.3rem Inconsolata, monospace;
+    text-shadow: 0 0 5px #c8c8c8;
+}
+    #display {
+}
+ #romURL {
+  pointer-events: none;
+  }
+  
+  button#submit-button {
+ text-shadow: 0px 1px 1px rgb(0 0 0 / 50%);
+    font-size: 13px;
+    line-height: 45px;
+    font-weight: bolder;
+    text-decoration: none;
+    height: 45px;
+    border: 0;
+    color: #fff !important;
+    border-radius: 35px;
+    text-align: center;
+    background-color: #1ab1ff;
+    cursor: pointer;
+    z-index: 1334;
+    bottom: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: auto;
+  }
+   button#submit-button:hover {
+  opacity: 0.9;
+}
+  
+  input#btnStatus {
+  text-shadow: 0px 1px 1px rgb(0 0 0 / 50%);
+    font-size: 13px;
+    line-height: 45px;
+    font-weight: bolder;
+    text-decoration: none;
+    height: 45px;
+    border: 0;
+    color: #fff !important;
+    border-radius: 35px;
+    text-align: center;
+    background-color: #1ab1ff;
+    cursor: pointer;
+    z-index: 1390934;
+  position: relative;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: auto;
+  }
+  </style>
+  <div id='console'>
 </div>
-           
-    </body>          
-  <script src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script>
+  <div class='back'></div>
+  
+   <div id='GameW'>
+<div id='gameInputs'>
+    <style type='text/css'>
+        #myFormId p     { display: table-row;  }
+        #myFormId label { display: table-cell; }
+        #myFormId input { display: table-cell;width: 100%;}
+    </style>
+    <form id='myFormId'>
+     <a href='#roms' style='color:#1ab1ff;'>Select</a> <data:post.title/> ROM
+            <input class='paste' id='romURL' name='romURL' required='required' type='text' value=''/>
+        <p>
+            <input id='platform' name='platform' required='required' type='hidden' value='snes'/>
+                <option value='snes'>Super Nintendo Entertainment System</option>
+        </p> 
+                     <button id='submit-button' type='submit'>Play <data:post.title/> online in your browser!</button>
+            <input id='btnStatus' type='button' value='Check Status'/>
+    </form>
+</div>
+      <div class='information'>
+    </div>
+  </div>  
+    </div>
+
+ <script type='text/javascript'>  
+  $.getJSON(&quot;https://yuushaexa.github.io/web/dev/snes/snes-rom2.json&quot;, function(json) {
+  
+json = json.filter(function(val) {
+  return (val.Name.includes(&quot;Operation Thunderbolt&quot;));
+});  
+  
+  var html = &quot;&quot;;  
+json.forEach(function(val) {
+  var keys = Object.keys(val);
+  html += &quot;<div class='cat'>&quot;;
+  keys.forEach(function(key) {
+     html += &quot;<p class='copy' tabindex='0'>&quot; + val[key] + &quot;</p>&quot;;
+  });
+    html += &quot;</div>&quot;;
+});
+    $(&quot;.information&quot;).html(html);  
+  }); 
+</script>     
+             <script type='text/javascript'>  
+
+          $(document).on(&#39;click&#39;, &#39;.copy&#39;, function(e){
+    e.preventDefault();
+    $(&#39;.paste&#39;).val($(this).text());
+});
+  </script>     
+    
+       
+          <script type='text/javascript'>
+$(function () {
+$(&#39;#btnStatus&#39;).click(function () {
+$.ajax({
+url: $(&#39;#romURL&#39;).val(),
+type:&#39;HEAD&#39;,
+success: function (data) {
+alert(&#39;exists&#39;);
+},
+error: function (data) {
+alert(&#39;does not exist&#39;);
+}
+});
+});
+})
+</script>
+<script>
+document.forms[&#39;myFormId&#39;].addEventListener(&#39;submit&#39;, async (event) =&gt; {
+    event.preventDefault();
+
+    const formData = new FormData(document.forms[&#39;myFormId&#39;]);
+    var romURL = formData.get(&#39;romURL&#39;).trim();
+    const platform = formData.get(&#39;platform&#39;).trim();
+
+    const romFile = formData.get(&#39;romFile&#39;);
+    console.log(romFile)
+   
+    var fileType = &quot;&quot;;
+    if (platform == &quot;arcade&quot;)
+    {
+        fileType = &quot;application/zip&quot;;
+    }
+   
+    
+    console.log(romURL);
+    console.log(platform);
+    console.log(fileType);
+    const display = document.createElement(&quot;div&quot;);
+    const game = document.createElement(&quot;div&quot;);
+    display.id = &quot;display&quot;;
+    game.id = &quot;game&quot;;
+    display.appendChild(game);
+    document.getElementById(&quot;console&quot;).appendChild(display);
+
+    window.EJS_player = &quot;#game&quot;;
+    window.EJS_gameName = &quot;Custom Game&quot;;
+    window.EJS_gameUrl = romURL;
+    window.EJS_core = platform;
+
+    const script = document.createElement(&quot;script&quot;)
+    script.id = &quot;emulatorjs&quot;;
+    script.src = &quot;https://yuushaexa.github.io/core-old/data/loader.js&quot;;
+    document.body.appendChild(script);
+    document.getElementById(&quot;gameInputs&quot;).remove();
+
+});
+</script>
+ 
+    </body>        
+<script src='//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 </html>
